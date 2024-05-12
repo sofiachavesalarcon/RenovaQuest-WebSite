@@ -23,7 +23,7 @@ export class LoginComponent {
     .pipe(
       catchError((error: HttpErrorResponse)=>{
         alert("Username o contraseña incorrecto");
-        return throwError("Username or Password Incorrect")
+        return throwError("Username o Contraseña Incorrecto")
       })
     )
     .subscribe((res:any)=>{

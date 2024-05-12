@@ -3,30 +3,30 @@
 		<form autocomplete="off" >
 			<h2>RENOVAQUEST</h2>
 			<div class="inputBox">
-				<input type="text" name="Username" required>
+				<input type="text" [(ngModel)]="SignUpObj.Username" name="Username" required>
 				<span>USERNAME</span>
 				<i></i>
 			</div>
       <div class="inputBox">
-				<input type="text" name="Email" required>
+				<input type="text" [(ngModel)]="SignUpObj.Email" name="Email" required>
 				<span>EMAIL</span>
 				<i></i>
 			</div>
 			<div class="inputBox">
-				<input type="password" name="Password" required="required">
-				<span>CONTRASEÑA</span>
+				<input type="password" [(ngModel)]="SignUpObj.Password" name="Password" required="required">
+				<span>PASSWORD</span>
 				<i></i>
 			</div>
       <div class="inputBox">
-				<input type="text" name="Image" required="required">
-				<span>IMAGEN</span>
+				<input type="text" [(ngModel)]="SignUpObj.Image" name="Image" required="required">
+				<span>IMAGE</span>
 				<i></i>
 			</div>
 
-			<button type="button" (click)="OnSignUp()">REGISTRAR</button>
+			<button type="button" (click)="OnSignUp()">SIGN UP</button>
       <div class="links">
-        <span>¿Ya tienes una cuenta?</span>
-        <a [routerLink]="['/login']">Inicia Sesión</a>
+        <span>Already a member?</span>
+        <a [routerLink]="['/login']">Log In</a>
       </div>
 		</form>
 	</div>

@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
@@ -17,9 +18,20 @@ export class SignUpComponent {
     this.SignUpObj = new SignUp();
   }
   OnSignUp(){
-    this.http.post('http://www.api-rest.somee.com/api/user', this.SignUpObj) .subscribe((res:any)=>{
-
+    this.http.post('http://www.api-rest.somee.com/api/user', this.SignUpObj)
+    .pipe(
+      catchError((error: HttpErrorResponse)=>{
+        alert("Registration failed");
+        return throwError("Username o Contraseña Incorrecto")
       })
+    )
+    .subscribe((res:any)=>{
+    if(res){
+        alert("registro exitoso")
+        this.router.navigateByUrl('/login')
+      }
+    })
+
   }
 }
 
