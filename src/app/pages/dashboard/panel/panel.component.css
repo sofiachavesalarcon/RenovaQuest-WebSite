@@ -1,0 +1,11 @@
+.Create {
+     color: rgba(45, 45, 48, 0.507);
+}
+
+.Update {
+     color: rgba(63, 118, 63, 0.854);
+}
+
+.Deleted {
+     color: rgba(255, 0, 0, 0.447);
+}
