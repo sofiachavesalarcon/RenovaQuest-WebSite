@@ -18,12 +18,12 @@
 				<i></i>
 			</div>
       <div class="inputBox">
-				<input type="url" name="Image" required="required">
+				<input type="text" name="Image" required="required">
 				<span>IMAGEN</span>
 				<i></i>
 			</div>
 
-			<button type="button" >REGISTRAR</button>
+			<button type="button" (click)="OnSignUp()">REGISTRAR</button>
       <div class="links">
         <span>¿Ya tienes una cuenta?</span>
         <a [routerLink]="['/login']">Inicia Sesión</a>

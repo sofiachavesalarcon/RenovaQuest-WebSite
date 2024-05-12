@@ -22,13 +22,13 @@ export class LoginComponent {
     this.http.post('http://www.api-rest.somee.com/api/user/login', this.loginObj)
     .pipe(
       catchError((error: HttpErrorResponse)=>{
-        alert("Username or Password Incorrect");
+        alert("Username o contraseña incorrecto");
         return throwError("Username or Password Incorrect")
       })
     )
     .subscribe((res:any)=>{
     if(res){
-        alert("Login Success")
+        alert("Logeo exitoso")
         this.router.navigateByUrl('/dashboard')
       }
     })
