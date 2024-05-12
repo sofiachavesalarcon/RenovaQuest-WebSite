@@ -22,12 +22,12 @@ export class SignUpComponent {
     .pipe(
       catchError((error: HttpErrorResponse)=>{
         alert("Registration failed");
-        return throwError("Username o Contraseña Incorrecto")
+        return throwError("Registration failed")
       })
     )
     .subscribe((res:any)=>{
     if(res){
-        alert("registro exitoso")
+        alert("SignUp Succes")
         this.router.navigateByUrl('/login')
       }
     })
