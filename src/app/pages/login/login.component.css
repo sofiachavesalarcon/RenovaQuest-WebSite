@@ -15,13 +15,14 @@ body
 	min-height: 100vh;
 	flex-direction: column;
 	background: #000000;
+  font-size: 1.5rem;
 }
 
 .box
 {
 	position: relative;
-	width: 500px;
-	height: 420px;
+	width: 600px;
+	height: 520px;
 	background: #1c1c1c;
 	border-radius: 8px;
 	overflow: hidden;
@@ -74,6 +75,7 @@ form
 	z-index: 2;
 	display: flex;
 	flex-direction: column;
+  align-items: center;
 }
 h2
 {
@@ -140,36 +142,38 @@ h2
 .inputBox input:valid ~ i,
 .inputBox input:focus ~ i
 {
-	height: 44px;
+	height: 55px;
 }
 .links
 {
 	display: flex;
 	justify-content: space-between;
+  align-items: center;
+  color: white;
+  gap: 25px;
 }
 .links a
 {
-	margin: 10px 0;
+
 	font-size: 0.9em;
-	color: #8f8f8f;
-	text-decoration: beige;
+	text-decoration: none;
 }
 .links a:hover,
 .links a:nth-child(2)
 {
-	color: #3F1F84;
+	color: #633fa5;
 }
 button[type="button"]
 {
 	border: none;
 	outline: none;
-	padding: 11px 25px;
+	padding: 11px 15px;
 	background: #3F1F84;
 	cursor: pointer;
 	border-radius: 30px;
 	font-weight: 600;
-	width: 200px;
-	margin: 15px 100px;
+	width: max-content;
+	margin: 35px 100px;
   color: #ffff;
 
 

@@ -3,7 +3,7 @@
 		<form autocomplete="off" >
 			<h2>RENOVAQUEST</h2>
 			<div class="inputBox">
-				<input type="email" [(ngModel)]="loginObj.EmailId" name="EmailId" required="required">
+				<input type="text" [(ngModel)]="loginObj.Username" name="Username" required="required">
 				<span>EMAIL o USERNAME</span>
 				<i></i>
 			</div>
@@ -12,11 +12,12 @@
 				<span>CONTRASEÑA</span>
 				<i></i>
 			</div>
-			<div class="links">
-				<a href="#">¿Olvidaste tu contraseña ?</a>
-				<a href="#">Registrate</a>
-			</div>
+
 			<button type="button" (click)="onLogin()">INICIAR SESION</button>
+      <div class="links">
+        <span>¿No tienes una cuenta?</span>
+        <a href="#">Registrate</a>
+      </div>
 		</form>
 	</div>
 

@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -17,22 +18,27 @@ export class LoginComponent {
     this.loginObj = new Login();
   }
   onLogin(){
-    this.http.post('https://freeapi.miniprojectideas.com/api/User/Login', this.loginObj).subscribe((res:any)=>{
-      if(res.result){
+    this.http.post('http://www.api-rest.somee.com/api/user/login', this.loginObj)
+    .pipe(
+      catchError((error: HttpErrorResponse)=>{
+        alert("Username or Password Incorrect");
+        return throwError("Username or Password Incorrect")
+      })
+    )
+    .subscribe((res:any)=>{
+    if(res){
         alert("Login Success")
         this.router.navigateByUrl('/dashboard')
-      }else{
-        alert(res.message)
       }
     })
   }
 }
 
 export class Login {
-  EmailId: string;
+  Username: string;
   Password:string;
   constructor(){
-    this.EmailId = '';
+    this.Username = '';
     this.Password = '';
   }
 }
