@@ -4,19 +4,19 @@
 			<h2>RENOVAQUEST</h2>
 			<div class="inputBox">
 				<input type="text" [(ngModel)]="loginObj.Username" name="Username" required>
-				<span>EMAIL o USERNAME</span>
+				<span>EMAIL or USERNAME</span>
 				<i></i>
 			</div>
 			<div class="inputBox">
 				<input type="password" [(ngModel)]="loginObj.Password" name="Password" required="required">
-				<span>CONTRASEÑA</span>
+				<span>PASSWORD</span>
 				<i></i>
 			</div>
 
-			<button type="button" (click)="onLogin()">INICIAR SESION</button>
+			<button type="button" (click)="onLogin()">LOGIN</button>
       <div class="links">
-        <span>¿No tienes una cuenta?</span>
-        <a [routerLink]="['/signUp']">Registrate</a>
+        <span>Don't have an account?</span>
+        <a [routerLink]="['/signUp']">Sign Up</a>
       </div>
 		</form>
 	</div>
