@@ -1,14 +1,13 @@
-import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [CommonModule, RouterModule, FormsModule, HttpClientModule],
+  imports: [RouterLink, FormsModule, HttpClientModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
@@ -27,7 +26,7 @@ export class SignUpComponent {
     )
     .subscribe((res:any)=>{
     if(res){
-        alert("SignUp Succes")
+        alert("You're all signed up!")
         this.router.navigateByUrl('/login')
       }
     })
