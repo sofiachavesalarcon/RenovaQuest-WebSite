@@ -2,24 +2,262 @@
      <div class="row d-flex justify-content-end">
           <div class="col-4">
                <h4 class="Create">Selected Entity</h4>
-               <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedEntity"
-                    (change)="onEntityChange()">
-                    <option selected>Open this Select Entity</option>
-                    <option value="1">Farm</option>
-                    <option value="2">FarmType</option>
-                    <option value="3">ContactType</option>
-                    <option value="4">Device</option>
-                    <option value="5">DeviceType</option>
-                    <option value="6">Farmer</option>
-                    <option value="7">EnergyLog</option>
-                    <option value="8">EnergyMeter</option>
+               <select class="form-select-propio" [(ngModel)]="selectedEntity" (change)="onEntityChange()">
+                    <option class="form-select-item" selected>Open this Select Entity</option>
+                    <option class="form-select-item" value="1">Farm</option>
+                    <option class="form-select-item" value="2">FarmType</option>
+                    <option class="form-select-item" value="3">ContactType</option>
+                    <option class="form-select-item" value="4">Device</option>
+                    <option class="form-select-item" value="5">DeviceType</option>
+                    <option class="form-select-item" value="6">Farmer</option>
+                    <option class="form-select-item" value="7">EnergyLog</option>
+                    <option class="form-select-item" value="8">EnergyMeter</option>
                </select>
           </div>
 
      </div>
      <div>
+          <br>
           @if (mostrarTabla == true) {
-          mostando tabla
+
+          @if (selectedEntity == '1') {
+          <table class="table table-bordered">
+               <thead>
+                    <tr>
+                         <th scope="col">Name</th>
+                         <th scope="col">Type</th>
+                         <th scope="col">Area</th>
+                         <th scope="col">Ubicacion</th>
+                         <th scope="col">Farmer</th>
+                         <td scope="col">
+                              <button class="CreateBtn" (click)="onCreate('1')">New</button>
+                         </td>
+                    </tr>
+               </thead>
+               <tbody class="table-group-divider">
+
+                    @for (farm of FarmData; track farm.farmId) {
+                    <tr>
+                         <td>{{farm.farmName}}</td>
+                         <td>{{farm.farmTypeId}}</td>
+                         <td>{{farm.farmArea}}</td>
+                         <td>{{farm.location}}</td>
+                         <td>{{farm.farmerId}}</td>
+                         <td>
+                              <button class="EditBtn" (click)="onEdit(farm.farmId)">Edit</button>
+                              <button class="DeleteBtn" (click)="onDelete(farm.farmId)">Delete</button>
+                         </td>
+
+                    </tr>
+                    }
+
+
+               </tbody>
+          </table>
+          }
+          @if (selectedEntity == '2') {
+          <table class="table table-bordered">
+               <thead>
+                    <tr>
+                         <th scope="col">Type</th>
+                         <td scope="col"> </td>
+                    </tr>
+               </thead>
+               <tbody class="table-group-divider">
+
+                    @for (farmType of FarmTypeData; track farmType.farmTypeId) {
+                    <tr>
+                         <td>{{farmType.typeFarm}}</td>
+                         <td>
+                              <button class="EditBtn" (click)="onEdit(farmType.farmTypeId)">Edit</button>
+                              <button class="DeleteBtn" (click)="onDelete(farmType.farmTypeId)">Delete</button>
+                         </td>
+
+                    </tr>
+                    }
+
+
+               </tbody>
+          </table>
+          }
+          @if (selectedEntity == '3') {
+          <table class="table table-bordered">
+               <thead>
+                    <tr>
+                         <th scope="col">Type</th>
+                         <td scope="col"> </td>
+                    </tr>
+               </thead>
+               <tbody class="table-group-divider">
+
+                    @for (item of ContactTypeData; track item.contactTypeId) {
+                    <tr>
+                         <td>{{item.typeContact}}</td>
+                         <td>
+                              <button class="EditBtn" (click)="onEdit(item.contactTypeId)">Edit</button>
+                              <button class="DeleteBtn" (click)="onDelete(item.contactTypeId)">Delete</button>
+                         </td>
+
+                    </tr>
+                    }
+
+
+               </tbody>
+          </table>
+          }
+          @if (selectedEntity == '4') {
+          <table class="table table-bordered">
+               <thead>
+                    <tr>
+                         <th scope="col">Device Brand</th>
+                         <th scope="col">Device Type</th>
+                         <th scope="col">Generation Capacity</th>
+                         <th scope="col">Energy Meter</th>
+                         <th scope="col">Farm</th>
+                         <td scope="col"> </td>
+                    </tr>
+               </thead>
+               <tbody class="table-group-divider">
+
+                    @for (device of DeviceData; track device.deviceId) {
+                    <tr>
+                         <td>{{device.deviceBrand}}</td>
+                         <td>{{device.deviceTypeId}}</td>
+                         <td>{{device.generationCapacity}}</td>
+                         <td>{{device.energyMeterId}}</td>
+                         <td>{{device.farmId}}</td>
+                         <td>
+                              <button class="EditBtn" (click)="onEdit(device.deviceId)">Edit</button>
+                              <button class="DeleteBtn" (click)="onDelete(device.deviceId)">Delete</button>
+                         </td>
+
+                    </tr>
+                    }
+
+
+               </tbody>
+          </table>
+          }
+          @if (selectedEntity == '5') {
+          <table class="table table-bordered">
+               <thead>
+                    <tr>
+                         <th scope="col">Device Type</th>
+                         <td scope="col"> </td>
+                    </tr>
+               </thead>
+               <tbody class="table-group-divider">
+
+                    @for (device of DeviceTypeData; track device.devicetypeId) {
+                    <tr>
+                         <td>{{device.typeDevice}}</td>
+
+                         <td>
+                              <button class="EditBtn" (click)="onEdit(device.devicetypeId)">Edit</button>
+                              <button class="DeleteBtn" (click)="onDelete(device.devicetypeId)">Delete</button>
+                         </td>
+
+                    </tr>
+                    }
+
+
+               </tbody>
+          </table>
+          }
+          @if (selectedEntity == '6') {
+          <table class="table table-bordered">
+               <thead>
+                    <tr>
+                         <th scope="col">Name</th>
+                         <th scope="col">LastName</th>
+                         <th scope="col">Contact Type</th>
+                         <th scope="col">Contact</th>
+                         <th scope="col">Address</th>
+                         <td scope="col"> </td>
+                    </tr>
+               </thead>
+               <tbody class="table-group-divider">
+
+                    @for (farmer of FarmerData; track farmer.farmerId) {
+                    <tr>
+                         <td>{{farmer.name}}</td>
+                         <td>{{farmer.lastName}}</td>
+                         <td>{{farmer.contactTypeId}}</td>
+                         <td>{{farmer.contact}}</td>
+                         <td>{{farmer.address}}</td>
+                         <td>
+                              <button class="EditBtn" (click)="onEdit(farmer.farmerId)">Edit</button>
+                              <button class="DeleteBtn" (click)="onDelete(farmer.farmerId)">Delete</button>
+                         </td>
+
+                    </tr>
+                    }
+
+
+               </tbody>
+          </table>
+          }
+          @if (selectedEntity == '7') {
+          <table class="table table-bordered">
+               <thead>
+                    <tr>
+                         <th scope="col">Energy Meter</th>
+                         <th scope="col">Consumed Energy</th>
+                         <th scope="col">Generated Energy</th>
+                         <th scope="col">Reading date</th>
+                         <td scope="col"> </td>
+                    </tr>
+               </thead>
+               <tbody class="table-group-divider">
+
+                    @for (energyL of EnergyLogData; track energyL.farmId) {
+                    <tr>
+                         <td>{{energyL.energyMeterId}}</td>
+                         <td>{{energyL.generatedEnergyKWH}}</td>
+                         <td>{{energyL.consumedEnergyKWH}}</td>
+                         <td>{{energyL.readingDate}}</td>
+                         <td>
+                              <button class="EditBtn" (click)="onEdit(energyL.farmId)">Edit</button>
+                              <button class="DeleteBtn" (click)="onDelete(energyL.farmId)">Delete</button>
+                         </td>
+
+                    </tr>
+                    }
+
+
+               </tbody>
+          </table>
+          }
+          @if (selectedEntity == '8') {
+          <table class="table table-bordered">
+               <thead>
+                    <tr>
+                         <th scope="col">Energy Meter Brand</th>
+                         <th scope="col">Energy Meter</th>
+                         <th scope="col">Instalation Date</th>
+                         <td scope="col"> </td>
+                    </tr>
+               </thead>
+               <tbody class="table-group-divider">
+
+                    @for (energyM of EnergyMeterData; track energyM.energyMeterId) {
+                    <tr>
+                         <td>{{energyM.energyMeterBrand}}</td>
+                         <td>{{energyM.energyMeterId}}</td>
+                         <td>{{energyM.instalationDate}}</td>
+
+                         <td>
+                              <button class="EditBtn" (click)="onEdit(energyM.energyMeterId)">Edit</button>
+                              <button class="DeleteBtn" (click)="onDelete(energyM.energyMeterId)">Delete</button>
+                         </td>
+
+                    </tr>
+                    }
+
+
+               </tbody>
+          </table>
+          }
           }
      </div>
 </div>

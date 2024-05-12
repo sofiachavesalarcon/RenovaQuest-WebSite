@@ -6,6 +6,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { Component } from '@angular/core';
 import { GameMasterComponent } from './pages/dashboard/gameMaster/gameMaster.component';
 import { PanelComponent } from './pages/dashboard/panel/panel.component';
+import { LogrosComponent } from './pages/dashboard/gameMaster/logros/logros.component';
+import { PartidasComponent } from './pages/dashboard/gameMaster/partidas/partidas.component';
 
 
 export const routes: Routes = [
@@ -31,6 +33,16 @@ export const routes: Routes = [
       {
         path: 'GameMaster',
         component: GameMasterComponent,
+        children: [
+          {
+            path: 'Logros',
+            component: LogrosComponent,
+          },
+          {
+            path: 'Partidas',
+            component: PartidasComponent,
+          }
+        ]
       },
       {
         path: 'Panel',
