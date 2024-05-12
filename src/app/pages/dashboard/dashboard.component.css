@@ -6,3 +6,8 @@ body {
      display: flex;
      gap: 3rem;
 }
+
+.contenido {
+     width: 100%;
+     margin-right: 3rem;
+}
