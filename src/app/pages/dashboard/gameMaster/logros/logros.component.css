@@ -1,0 +1,25 @@
+img {
+     border-radius: 20px;
+     object-fit: cover;
+}
+
+h4 {
+     font-size: .7rem;
+     color: #000000;
+     margin-top: 20px;
+}
+
+h3 {
+     font-weight: bold;
+}
+
+.logro {
+     width: 800px;
+     align-items: center;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.082);
+     border-radius: 20px;
+}
+
+.logro:hover {
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.182);
+}

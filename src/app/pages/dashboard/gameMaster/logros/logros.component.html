@@ -1,1 +1,24 @@
-<p>logros works!</p>
+@for(logro of Logros; track logro.id){
+
+<div class="logro d-flex flex-row p-3 gap-3">
+     <img src="https://github.com/mdo.png" alt="" width="300px" height="200px">
+     <div>
+          <div>
+               <h3>{{logro.name|uppercase}}</h3>
+               <p>{{logro.description }}</p>
+
+          </div>
+          <div class="d-flex gap-4">
+               <div>
+                    <h4>PROGRESO DEL LOGRO</h4>
+                    <span>{{logro.progreso}}% | 100%</span>
+               </div>
+               <div>
+                    <h4>EXPERIENCIA OBTENIDA</h4>
+                    <span>{{logro.experiencia}} EXP | 100 EXP</span>
+               </div>
+          </div>
+     </div>
+</div>
+<br>
+}

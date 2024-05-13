@@ -8,4 +8,19 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   templateUrl: './gameMaster.component.html',
   styleUrl: './gameMaster.component.css'
 })
-export class GameMasterComponent { }
+export class GameMasterComponent {
+
+  user: any;
+  constructor() {
+    this.user = this.ObtenerUsuario();
+    if (this.user.image) {
+      this.user.image = 'https://www.w3schools.com/howto/img_avatar.png';
+    }
+  }
+
+
+  ObtenerUsuario() {
+    const user = localStorage.getItem('user');
+    return user ? JSON.parse(user) : null;
+  }
+}

@@ -1,1 +1,19 @@
-<p>partidas works!</p>
+<table class="table table-bordered table-striped">
+     <thead>
+          <tr class="text-center">
+               <td scope="col">Game</td>
+               <td scope="col">Game Date</td>
+               <td scope="col">Energy Type</td>
+          </tr>
+     </thead>
+     <tbody class="table-group-divider">
+          @for (time of Games; track $index) {
+          <tr>
+               <td>{{time.energyType}}</td>
+               <td>{{time.gameDate}}</td>
+          </tr>
+
+          }
+
+     </tbody>
+</table>

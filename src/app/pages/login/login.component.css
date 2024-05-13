@@ -152,7 +152,7 @@ h2 {
 	color: #633fa5;
 }
 
-button[type="button"] {
+button[type="submit"] {
 	border: none;
 	outline: none;
 	padding: 11px 15px;

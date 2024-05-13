@@ -1,6 +1,6 @@
 <body>
 	<div class="box">
-		<form autocomplete="off" >
+		<form autocomplete="off">
 			<h2>RENOVAQUEST</h2>
 			<div class="inputBox">
 				<input type="text" [(ngModel)]="loginObj.Username" name="Username" required>
@@ -13,11 +13,11 @@
 				<i></i>
 			</div>
 
-			<button type="button" (click)="onLogin()">LOG IN</button>
-      <div class="links">
-        <span>Don't have an account?</span>
-        <a [routerLink]="['/signUp']">Sign Up</a>
-      </div>
+			<button type="submit" (click)="onLogin()">LOG IN</button>
+			<div class="links">
+				<span>Don't have an account?</span>
+				<a [routerLink]="['/signUp']">Sign Up</a>
+			</div>
 		</form>
 	</div>
 
