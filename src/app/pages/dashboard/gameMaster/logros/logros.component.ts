@@ -1,51 +1,40 @@
 import { NgFor, UpperCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-logros',
   standalone: true,
-  imports: [NgFor, UpperCasePipe],
+  imports: [NgFor, UpperCasePipe, HttpClientModule],
   templateUrl: './logros.component.html',
   styleUrl: './logros.component.css'
 })
 export class LogrosComponent {
+  user: any;
+  Badges: any = [];
 
-  Logros = [
-    {
-      id: 1,
-      name: 'rey de baterias',
-      description: '! Has demostrado tu habilidad exeptional en la recoleccion de baterias, sigue asi !',
-      progreso: 0,
-      experiencia: 0,
-    },
-    {
-      id: 2,
-      name: 'Explorador',
-      description: 'Descripcion del logro 2',
-      progreso: 0,
-      experiencia: 0,
-    },
-    {
-      id: 3,
-      name: 'Logro 3',
-      description: 'Descripcion del logro 3',
-      progreso: 0,
-      experiencia: 0,
-    },
-    {
-      id: 4,
-      name: 'Logro 4',
-      description: 'Descripcion del logro 4',
-      progreso: 0,
-      experiencia: 0,
-    },
-    {
-      id: 5,
-      name: 'Logro 5',
-      description: 'Descripcion del logro 5',
-      progreso: 0,
-      experiencia: 0,
-    }
-  ];
+  constructor(private http: HttpClient) {
+    this.user = this.ObtenerUsuario();
 
+    this.http.get('http://www.api-rest.somee.com/api/badge').subscribe(data => {
+      this.Badges = data;
+      this.Badges = this.Badges.filter((item: any) => item.userId === this.user.userId)
+
+      this.Badges.map((item: any) => {
+        if (item.completed) {
+          item.completed = 'Completed';
+        }
+      });
+
+
+      console.log(this.Badges);
+    });
+
+  }
+
+
+  ObtenerUsuario() {
+    const user = localStorage.getItem('user');
+    return user ? JSON.parse(user) : null;
+  }
 }

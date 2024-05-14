@@ -18,6 +18,7 @@ h3 {
   font-size: .7rem;
   color: #000000;
   margin-top: 20px;
+  height: 20px;
 
 }
 
@@ -47,16 +48,26 @@ hr {
 
 }
 
+.userName {
+  width: 100%;
+}
+
 
 
 .contenedor-info {
   height: auto;
   display: flex;
+  align-items: center;
   gap: 50px;
 }
 
 .info {
-  width: max-content;
-  height: max-content;
+  width: 400px;
+  height: 100px;
   font-size: 4rem;
+}
+
+p {
+  font-size: 1rem;
+  color: #000000;
 }

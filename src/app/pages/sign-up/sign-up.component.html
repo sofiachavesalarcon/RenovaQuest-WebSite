@@ -1,13 +1,13 @@
 <body>
 	<div class="box">
-		<form autocomplete="off" >
+		<form autocomplete="off">
 			<h2>RENOVAQUEST</h2>
 			<div class="inputBox">
 				<input type="text" [(ngModel)]="SignUpObj.Username" name="Username" required>
 				<span>USERNAME</span>
 				<i></i>
 			</div>
-      <div class="inputBox">
+			<div class="inputBox">
 				<input type="text" [(ngModel)]="SignUpObj.Email" name="Email" required>
 				<span>EMAIL</span>
 				<i></i>
@@ -17,9 +17,9 @@
 				<span>PASSWORD</span>
 				<i></i>
 			</div>
-      <div class="inputBox">
+			<div class="inputBox">
 				<input type="text" [(ngModel)]="SignUpObj.Image" name="Image" required>
-				<span>IMAGE</span>
+				<span>URL FOR THE IMAGE</span>
 				<i></i>
 			</div>
 
@@ -28,8 +28,8 @@
         <span>Already a member?</span>
         <a [routerLink]="['/login']">Log In</a>
       </div>
-	</form>
+
+		</form>
 	</div>
 
 </body>
-
