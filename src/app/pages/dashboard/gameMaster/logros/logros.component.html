@@ -1,24 +1,28 @@
-@for(logro of Logros; track logro.id){
+@if(Badges.length > 0){
+@for(logro of Badges; track logro.id){
 
-<div class="logro d-flex flex-row p-3 gap-3">
-     <img src="https://github.com/mdo.png" alt="" width="300px" height="200px">
+<div class="logro d-flex flex-row p-3 gap-3 ">
+     <img loading=" lazy" src="{{logro.image}}" alt="">
      <div>
           <div>
-               <h3>{{logro.name|uppercase}}</h3>
+               <h3>{{logro.nameBadge |uppercase}}</h3>
                <p>{{logro.description }}</p>
 
           </div>
-          <div class="d-flex gap-4">
+          <div class="d-flex gap-4 text-center">
                <div>
                     <h4>PROGRESO DEL LOGRO</h4>
-                    <span>{{logro.progreso}}% | 100%</span>
+                    <b><span class=" text-center">{{logro.completed}}</span></b>
                </div>
                <div>
                     <h4>EXPERIENCIA OBTENIDA</h4>
-                    <span>{{logro.experiencia}} EXP | 100 EXP</span>
+                    <b><span class="text-center">{{logro.experience}} EXP</span></b>
                </div>
           </div>
      </div>
 </div>
 <br>
+}
+}@else {
+<h3>No has conseguido ningun logro</h3>
 }

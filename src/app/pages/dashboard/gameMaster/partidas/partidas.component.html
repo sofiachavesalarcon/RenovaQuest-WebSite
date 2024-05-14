@@ -4,13 +4,16 @@
                <td scope="col">Game</td>
                <td scope="col">Game Date</td>
                <td scope="col">Energy Type</td>
+               <td scope="col">Time</td>
           </tr>
      </thead>
-     <tbody class="table-group-divider">
-          @for (time of Games; track $index) {
+     <tbody class="table-group-divider text-center">
+          @for (data of GameData; track $index) {
           <tr>
-               <td>{{time.energyType}}</td>
-               <td>{{time.gameDate}}</td>
+               <td>{{$index + 1 }}</td>
+               <td>{{data.gameDate}}</td>
+               <td>{{data.energyType}}</td>
+               <td>{{data.score}}</td>
           </tr>
 
           }

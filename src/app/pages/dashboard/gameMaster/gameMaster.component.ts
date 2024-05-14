@@ -13,7 +13,7 @@ export class GameMasterComponent {
   user: any;
   constructor() {
     this.user = this.ObtenerUsuario();
-    if (this.user.image) {
+    if (this.user.image == null) {
       this.user.image = 'https://www.w3schools.com/howto/img_avatar.png';
     }
   }

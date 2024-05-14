@@ -1,14 +1,8 @@
 .contenedor-side {
      width: 280px;
-     height: auto;
+     height: 100vh;
      background-color: #f8f9fa;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.322);
      position: sticky;
      top: 0;
-}
-
-.user {
-     position: fixed;
-     bottom: 0;
-     width: 280px;
-     margin: 10px 0;
 }

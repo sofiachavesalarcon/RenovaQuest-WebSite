@@ -14,7 +14,7 @@ export class LayoutComponent {
 
   constructor(private router: Router) {
     this.user = this.ObtenerUsuario();
-    if (this.user.image) {
+    if (this.user.image == null) {
       this.user.image = 'https://www.w3schools.com/howto/img_avatar.png';
     }
   }
