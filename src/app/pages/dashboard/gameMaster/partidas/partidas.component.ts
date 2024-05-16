@@ -1,6 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { GameMasterComponent } from '../gameMaster.component';
+import { InfoService } from '../../../../services/info.service';
 
 @Component({
   selector: 'app-partidas',
@@ -15,7 +16,7 @@ export class PartidasComponent implements OnInit {
   user: any;
 
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private info: InfoService) {
     this.user = this.ObtenerUsuario();
   }
 
@@ -23,9 +24,14 @@ export class PartidasComponent implements OnInit {
     this.http.get('http://www.api-rest.somee.com/api/game').subscribe(data => {
 
       this.GameData = data;
-      console.log(this.GameData);
+
       this.GameData = this.GameData.filter((item: any) => item.userId === this.user.userId);
-      console.log(this.GameData);
+
+      const wonGamesCount = this.GameData.reduce((count: any, game: any) => {
+        return game.score !== '0:00' ? count + 1 : count;
+      }, 0);
+
+      this.info.SendGamesWon(wonGamesCount);
 
     });
   }

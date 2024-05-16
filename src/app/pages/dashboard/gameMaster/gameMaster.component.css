@@ -16,9 +16,17 @@ img {
 
 h3 {
   font-size: .7rem;
-  color: #000000;
+  color: #010101ae;
   margin-top: 20px;
   height: 20px;
+  font-weight: bold;
+
+}
+
+svg {
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
 
 }
 
@@ -40,12 +48,16 @@ hr {
 
 .contenedor-logros>a {
   text-decoration: none;
-  color: #000000;
+  color: #0000008f;
   width: max-content;
   height: max-content;
   padding: 5px;
   font-weight: bold;
 
+}
+
+.contenedor-logros>a:hover {
+  color: #000000d2;
 }
 
 .userName {

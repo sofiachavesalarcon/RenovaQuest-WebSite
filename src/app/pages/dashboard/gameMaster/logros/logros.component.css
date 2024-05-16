@@ -2,6 +2,7 @@ img {
      border-radius: 20px;
      object-fit: cover;
      height: 200px;
+     filter: grayscale(100%);
 }
 
 h4 {

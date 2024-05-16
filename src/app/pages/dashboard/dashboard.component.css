@@ -1,10 +1,9 @@
 .dash {
      display: flex;
-     gap: 3rem;
+     gap: 2rem;
 }
 
 .contenido {
      width: 100%;
-     margin-right: 3rem;
-     margin-top: 3rem;
+     margin-right: 2rem;
 }

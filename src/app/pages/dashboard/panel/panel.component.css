@@ -1,3 +1,12 @@
+body {
+     background-color: #c62727;
+     color: white;
+     font-family: 'Roboto', sans-serif;
+     position: absolute;
+     ;
+}
+
+
 .Create {
      color: rgba(45, 45, 48, 0.507);
 }
@@ -40,7 +49,36 @@ button {
 
 }
 
+.entidad {
+     background-color: #ffffff6d;
+     border-radius: 0;
+     padding: .5rem;
+     cursor: pointer;
+     transition: background-color 0.3s;
+     margin: 2rem 0;
+     color: rgba(0, 0, 0, 0.637);
+     font-size: 1rem;
+     width: 100%;
+     text-align: center;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.088);
+     transition: all 0.3s;
 
+}
+
+.entidad:hover {
+     background-color: #000000d3;
+     color: white;
+}
+
+.contenedor-form {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: 400px;
+     margin: 0 auto;
+
+}
 
 .EditBtn {
      background-color: #5d5b5b;

@@ -7,6 +7,11 @@ import { PanelComponent } from './pages/dashboard/panel/panel.component';
 import { LogrosComponent } from './pages/dashboard/gameMaster/logros/logros.component';
 import { PartidasComponent } from './pages/dashboard/gameMaster/partidas/partidas.component';
 import { authGuard } from './guards/auth.guard';
+import { FarmComponent } from './pages/dashboard/panel/components/farm/farm.component';
+import { EnergyMeterComponent } from './pages/dashboard/panel/components/energy-meter/energy-meter.component';
+import { EnergyLogComponent } from './pages/dashboard/panel/components/energy-log/energy-log.component';
+import { FarmerComponent } from './pages/dashboard/panel/components/farmer/farmer.component';
+import { DeviceComponent } from './pages/dashboard/panel/components/device/device.component';
 
 
 export const routes: Routes = [
@@ -45,10 +50,35 @@ export const routes: Routes = [
           }
         ]
       },
-
       {
         path: 'Panel',
         component: PanelComponent,
+        children: [
+          {
+            path: '',
+            component: FarmComponent,
+          },
+          {
+            path: 'farmer',
+            component: FarmerComponent,
+          },
+          {
+            path: 'farm',
+            component: FarmComponent,
+          },
+          {
+            path: 'energyMeter',
+            component: EnergyMeterComponent,
+          },
+          {
+            path: 'energyLog',
+            component: EnergyLogComponent,
+          },
+          {
+            path: 'device',
+            component: DeviceComponent,
+          }
+        ]
       },
       {
         path: 'GameMaster',
