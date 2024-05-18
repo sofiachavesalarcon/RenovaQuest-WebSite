@@ -12,6 +12,7 @@ import { EnergyMeterComponent } from './pages/dashboard/panel/components/energy-
 import { EnergyLogComponent } from './pages/dashboard/panel/components/energy-log/energy-log.component';
 import { FarmerComponent } from './pages/dashboard/panel/components/farmer/farmer.component';
 import { DeviceComponent } from './pages/dashboard/panel/components/device/device.component';
+import { PowerBiComponent } from './pages/dashboard/power-bi/power-bi.component';
 
 
 export const routes: Routes = [
@@ -79,6 +80,10 @@ export const routes: Routes = [
             component: DeviceComponent,
           }
         ]
+      },
+      {
+        path: 'powerBi',
+        component: PowerBiComponent,
       },
       {
         path: 'GameMaster',
