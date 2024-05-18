@@ -1,1 +1,110 @@
-<p>device works!</p>
+<div class="contenedor d-flex gap-4">
+     <div class="formulario">
+          <h3 class="text-center">Create Device</h3>
+          <form [formGroup]="formGroup">
+               @if(actualizar === true) {
+               <div class="id-contenido">
+                    <label for="id" class="form-label">Id</label>
+                    <input type="text" class="form-control" id="id" formControlName="id" required>
+               </div>
+               }
+
+               <div class="mb-3">
+                    <label for="deviceBrand" class="form-label">DeviceBrand</label>
+                    <input type="text" class="form-control" id="deviceBrand" formControlName="deviceBrand" required>
+               </div>
+               <div class="mb-3">
+                    <label for="generationCapacity" class="form-label">GenerationCapacity</label>
+                    <input type="text" class="form-control" id="generationCapacity" formControlName="generationCapacity"
+                         required>
+               </div>
+               <div class="mb-3">
+                    <label for="deviceType" class="form-label">Device Type</label><br>
+                    <select id="deviceType" formControlName="deviceTypeId">
+                         @for (item of deviceTypes; track $index) {
+                         <option [value]="item.id">{{item.name}}</option>
+                         }
+                    </select>
+
+               </div>
+               <div class="mb-3">
+                    <label for="farm" class="form-label">Farm</label><br>
+                    <select id="farm" formControlName="farmId">
+                         @for (item of farms; track $index) {
+                         <option [value]="item.id">{{item.name}}</option>
+                         }
+                    </select>
+
+               </div>
+               <div class="mb-3">
+                    <label for="energyMeter" class="form-label">Energy Meter</label><br>
+                    <select id="energyMeter" formControlName="energyMeterId">
+                         @for (item of energyMeters; track $index) {
+                         <option [value]="item.id">{{item.name}}</option>
+                         }
+                    </select>
+               </div>
+
+               @if(actualizar === false) {
+               <button class="btn btn-primary" (click)="createDevice()">Create</button>
+               }@else {
+               <button class="btn btn-secondary" (click)="update()">Update</button>
+               }
+
+          </form>
+     </div>
+     <div class="tabla">
+          <table class="table">
+               <thead>
+                    <tr>
+                         <th>DeviceBrand</th>
+                         <th>GenerationCapacity</th>
+                         <th>Device Type</th>
+                         <th>Farm</th>
+                         <th>Energy Meter</th>
+                         <th></th>
+                    </tr>
+               </thead>
+               <tbody>
+                    @for (item of devices; track $index) {
+                    <tr>
+                         <td>{{item.deviceBrand}}</td>
+                         <td>{{item.generationCapacity}}</td>
+                         <td>{{item.deviceTypeId}}</td>
+                         <td>{{item.farmId}}</td>
+                         <td>{{item.energyMeterId}}</td>
+
+                         <td>
+                              <button class="btn btn-success buton update" (click)="UpdateDevice(item.deviceId)">
+                                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit-off"
+                                        width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff"
+                                        fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
+                                        <path
+                                             d="M10.507 10.498l-1.507 1.502v3h3l1.493 -1.498m2 -2.01l4.89 -4.907a2.1 2.1 0 0 0 -2.97 -2.97l-4.913 4.896" />
+                                        <path d="M16 5l3 3" />
+                                        <path d="M3 3l18 18" />
+                                   </svg>
+                              </button>
+
+                         </td>
+                         <td>
+                              <button class="btn btn-success buton delete">
+                                   <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="icon icon-tabler icon-tabler-trash-filled" width="44" height="44"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" fill="none"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                        <path d="M20 6a1 1 0 0 1 .117 1.993l-.117 .007h-.081l-.919 11a3 3 0 0 1 -2.824 2.995l-.176 .005h-8c-1.598 0 -2.904 -1.249 -2.992 -2.75l-.005 -.167l-.923 -11.083h-.08a1 1 0 0 1 -.117 -1.993l.117 -.007h16z"
+                                             stroke-width="0" fill="currentColor" />
+                                        <path d="M14 2a2 2 0 0 1 2 2a1 1 0 0 1 -1.993 .117l-.007 -.117h-4l-.007 .117a1 1 0 0 1 -1.993 -.117a2 2 0 0 1 1.85 -1.995l.15 -.005h4z"
+                                             stroke-width="0" fill="currentColor" />
+                                   </svg>
+                              </button>
+                         </td>
+                    </tr>
+                    }
+               </tbody>
+          </table>
+     </div>

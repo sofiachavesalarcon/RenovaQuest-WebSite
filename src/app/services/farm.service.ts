@@ -9,11 +9,11 @@ export class FarmService {
 
   constructor(private http: HttpClient) { }
 
-  url = 'http://www.api-rest.somee.com/api/farmType';
+  url = 'https://www.api-rest.somee.com/api/farmType';
 
-  url2 = 'http://www.api-rest.somee.com/api/farmer';
+  url2 = 'https://www.api-rest.somee.com/api/farmer';
 
-  url3 = 'http://www.api-rest.somee.com/api/farm';
+  url3 = 'https://www.api-rest.somee.com/api/farm';
 
 
 

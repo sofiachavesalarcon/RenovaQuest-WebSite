@@ -23,7 +23,7 @@ export class LoginComponent {
       alert("Please enter username and password");
       return;
     }
-    this.http.post('http://www.api-rest.somee.com/api/user/login', this.loginObj)
+    this.http.post('https://www.api-rest.somee.com/api/user/login', this.loginObj)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           alert("Username or Password incorrect");

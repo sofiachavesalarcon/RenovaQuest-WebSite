@@ -21,7 +21,7 @@ export class PartidasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get('http://www.api-rest.somee.com/api/game').subscribe(data => {
+    this.http.get('https://www.api-rest.somee.com/api/game').subscribe(data => {
 
       this.GameData = data;
 

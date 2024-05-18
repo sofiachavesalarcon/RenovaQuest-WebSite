@@ -18,7 +18,7 @@ export class LogrosComponent {
   constructor(private http: HttpClient, private info: InfoService) {
     this.user = this.ObtenerUsuario();
 
-    this.http.get('http://www.api-rest.somee.com/api/badge').subscribe(data => {
+    this.http.get('https://www.api-rest.somee.com/api/badge').subscribe(data => {
       this.Badges = data;
       this.Badges = this.Badges.filter((item: any) => item.userId === this.user.userId)
 
@@ -37,7 +37,7 @@ export class LogrosComponent {
 
     });
 
-    this.http.get('http://www.api-rest.somee.com/api/game').subscribe(data => {
+    this.http.get('https://www.api-rest.somee.com/api/badge').subscribe(data => {
 
       this.GameData = data;
 
