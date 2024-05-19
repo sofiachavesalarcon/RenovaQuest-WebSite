@@ -13,26 +13,26 @@ import { catchError, throwError } from 'rxjs';
 })
 export class SignUpComponent {
   SignUpObj: SignUp;
-  constructor(private http: HttpClient, private router:Router){
+  constructor(private http: HttpClient, private router: Router) {
     this.SignUpObj = new SignUp();
   }
 
-  OnSignUp(){
-    if(this.SignUpObj.Email != '' && this.SignUpObj.Username && this.SignUpObj.Password && this.SignUpObj.Image){
-      this.http.post('http://www.api-rest.somee.com/api/user', this.SignUpObj)
-      .pipe(
-        catchError((error: HttpErrorResponse)=>{
-          alert("Registration failed");
-          return throwError("Registration failed")
+  OnSignUp() {
+    if (this.SignUpObj.Email != '' && this.SignUpObj.Username != '' && this.SignUpObj.Password != '' && this.SignUpObj.Image != '') {
+      this.http.post('https://www.api-rest.somee.com/api/user', this.SignUpObj)
+        .pipe(
+          catchError((error: HttpErrorResponse) => {
+            alert("Registration failed");
+            return "Registration failed";
+          })
+        )
+        .subscribe((res: any) => {
+          if (res) {
+            alert("You're all signed up!")
+            this.router.navigateByUrl('/login')
+          }
         })
-      )
-      .subscribe((res:any)=>{
-      if(res){
-          alert("You're all signed up!")
-          this.router.navigateByUrl('/login')
-        }
-      })
-    }else{
+    } else {
       alert('All fields are required')
     }
 
@@ -46,9 +46,9 @@ export class SignUpComponent {
 export class SignUp {
   Username: string;
   Email: string;
-  Password:string;
+  Password: string;
   Image: string;
-  constructor(){
+  constructor() {
     this.Username = '';
     this.Email = '';
     this.Password = '';
