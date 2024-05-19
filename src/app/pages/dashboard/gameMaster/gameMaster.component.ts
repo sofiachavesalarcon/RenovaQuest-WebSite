@@ -18,8 +18,9 @@ export class GameMasterComponent {
   user: any;
   constructor(private info: InfoService) {
     this.user = this.ObtenerUsuario();
-    if (this.user.image == null) {
+    if (this.user.image == null || this.user.image.length < 30) {
       this.user.image = 'https://www.w3schools.com/howto/img_avatar.png';
+
     }
 
     this.info.BadgeActual.subscribe((data: any) => {

@@ -81,7 +81,7 @@ export class EnergyLogComponent implements OnInit {
   }
 
   update() {
-
+    Number(this.formGroup.value.energyMeterId);
     console.log(this.formGroup.value)
     this.http.UpdateEnergyLog(this.formGroup.value).subscribe((response) => {
       this.energyLogs = this.energyLogs.map((item: any) => {
