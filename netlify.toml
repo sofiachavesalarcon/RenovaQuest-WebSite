@@ -1,0 +1,3 @@
+[build]
+  publish = "dist/<nombre-del-proyecto>"
+  command = "npm run build --prod"
