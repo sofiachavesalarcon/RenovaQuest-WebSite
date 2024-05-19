@@ -16,7 +16,6 @@ import { PowerBiComponent } from './pages/dashboard/power-bi/power-bi.component'
 
 
 export const routes: Routes = [
-
   {
     path: '',
     redirectTo: 'login', pathMatch: 'full',
