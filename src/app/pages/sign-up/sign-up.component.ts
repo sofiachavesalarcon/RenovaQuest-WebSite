@@ -18,12 +18,12 @@ export class SignUpComponent {
   }
 
   OnSignUp() {
-    if (this.SignUpObj.Email != '' && this.SignUpObj.Username != '' && this.SignUpObj.Password != '' && this.SignUpObj.Image != '') {
+    if (this.SignUpObj.Email != '' && this.SignUpObj.Username && this.SignUpObj.Password && this.SignUpObj.Image) {
       this.http.post('https://www.api-rest.somee.com/api/user', this.SignUpObj)
         .pipe(
           catchError((error: HttpErrorResponse) => {
             alert("Registration failed");
-            return "Registration failed";
+            return throwError("Registration failed");
           })
         )
         .subscribe((res: any) => {
