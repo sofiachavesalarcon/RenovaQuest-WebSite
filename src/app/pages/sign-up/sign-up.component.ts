@@ -23,7 +23,7 @@ export class SignUpComponent {
         .pipe(
           catchError((error: HttpErrorResponse) => {
             alert("Registration failed");
-            return "Registration failed";
+            return throwError("register fail");
           })
         )
         .subscribe((res: any) => {
