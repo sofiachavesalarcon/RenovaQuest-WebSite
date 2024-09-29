@@ -4,7 +4,7 @@
 
 ![image](https://github.com/user-attachments/assets/31a6aa99-cec9-4fb5-8811-62ff9a8814ab)
 
-# Aplicación Web RenovaQuest para el Game Master
+# Aplicación Web para el Game Master de RenovaQuest
 
 RenovaQuest es un juego educativo centrado en energías renovables como la solar, eólica e hidroeléctrica. Esta aplicación web está diseñada para que el **Game Master** gestione y monitoree el ecosistema del juego de manera efectiva.
 
