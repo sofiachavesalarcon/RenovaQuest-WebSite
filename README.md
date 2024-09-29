@@ -126,4 +126,4 @@ Este proyecto está licenciado bajo la [Licencia MIT](LICENSE).
 
 ---
 
-*Para cualquier pregunta o soporte, por favor contacta a [tu.email@ejemplo.com](mailto:andersonarturomarin@gmail.com).*
+*Para cualquier pregunta o soporte, por favor contacta a [andersonarturomarin@gmail.com](mailto:andersonarturomarin@gmail.com).*
